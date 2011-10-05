@@ -8,15 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol JPOperation;
+@protocol JPOperationDelegate;
 
 @interface JPOperation : NSOperation
 
-@property (nonatomic, retain) id <NSObject, JPOperation> delegate;
+@property (nonatomic, retain) id <JPOperationDelegate> delegate;
 
 @end
 
-@protocol JPOperation <NSObject>
+@protocol JPOperationDelegate <NSObject>
 
 @optional
 -(void)jpOperationHasStarted:(JPOperation*)op;
